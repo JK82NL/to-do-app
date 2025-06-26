@@ -8,11 +8,11 @@ import { ref } from "vue";
 // const counters = ref<string[]>([]);
 // const newName = ref("");
 
-const giveName = ref<string[]>();
+const taskLists = ref<string[]>([]);
 const addTask = ref("");
 
 function addTaskList() {
-  giveName.value.push(giveName.value);
+  taskLists.value.push(giveName.value);
 }
 // function handleThreshold(value: string) {
 //   alert(value);
