@@ -1,64 +1,50 @@
 <script setup lang="ts">
-import ToDoListInput from "./components/ToDoListInput.vue";
-import { ref } from "vue";
-
-// import Counter from "./components/Counter.vue";
-// import { ref } from "vue";
-
-// const counters = ref<string[]>([]);
-// const newName = ref("");
-
-const taskLists = ref<string[]>([]);
-const addTask = ref("");
-
-function addTaskList() {
-  taskLists.value.push(giveName.value);
-}
-// function handleThreshold(value: string) {
-//   alert(value);
-// }
-
-// function addCount() {
-//   counters.value.push(newName.value);
-//   newName.value = "";
-// }
+import Counter from "./components/Counter.vue";
+import MainHeader from "./components/MainHeader.vue";
+import TaskList from "./components/TaskList.vue";
 </script>
 
 <template>
-  <header class="container"><h1>To-do App</h1></header>
+  <MainHeader />
 
-  <div class="container">
-    <input type="text" v-model="giveName" />
-    <button @click="addTask">Add Task</button>
+  <TaskList />
+  <!-- <input type="text" v-model="giveName" />
+    <button @click="addTask()">Add Task</button> -->
+
+  <div>
+    <h3>Icons</h3>
+    <ul>
+      <i class="bi bi-list-task"></i>
+    </ul>
   </div>
-  <div class="container">{{ giveName }}</div>
-
-  <!--  -->
-  <!-- <h1>Dit is mijn teller</h1> -->
-  <!-- <input type="text" v-model="newName" />{{ newName }} UPDATE GELIJK-->
-  <!-- <input type="text" v-model="newName" /> -->
-  <!-- <button @click="addCount">Nieuwe teller</button> -->
-  <!-- <Counter :name="'Koolhydraten' + 'iets anders'" @threshold-reached="handleThreshold"></Counter>
-  <Counter name="Sugars"></Counter> -->
-  <!-- <div v-for="count in counters"> -->
-  <!-- <Counter :name="count" @threshold-reached="handleThreshold"></Counter> -->
-  <!-- </div> -->
 </template>
 
 <style scoped>
-.container {
+/* .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px;
+  margin-bottom: 15px;
 }
 
 header {
   background: lightcoral;
+  width: 700px;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;
 }
 
 h1 {
   font-size: xx-large;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+.task-list-box {
+  display: border-box;
+  max-width: 25vw;
+  height: fit-content;
+  background: lightcyan;
+} */
 </style>
