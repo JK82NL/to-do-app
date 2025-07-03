@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { TaskInterface } from "@/task";
+import type { TaskInterface } from "../task";
 import { ref } from "vue";
 
 // const tasks = ref<{ text: string; done: boolean }[]>([]);
@@ -33,12 +33,12 @@ function addTask() {
     <div class="row justify-content-center align-items-center">
       <input v-model="taskName" placeholder="Add task" />
       <button @click="addTask">Add</button>
-      <ul>
+      <ul style="list-style-type: none">
         <li v-for="(task, idx) in tasks" :key="idx">
           <!-- de v-model wordt ook meegenomen op andere plekken waar deze task voorkomt -->
           <input type="checkbox" v-model="task.done" />
           <!-- Conditionele If statement voor de CSS -->
-          <span :style="{ textDecoration: task.done ? 'line-through' : '' }">{{ task.text }}</span>
+          <span :style="{ textDecoration: task.done ? 'line-through' : '', backgroundColor: task.done ? 'lightgreen' : '' }">{{ task.text }}</span>
         </li>
       </ul>
     </div>
